@@ -1,0 +1,17 @@
+An improvement to my identity system
+<p>
+  A proposal by Liz to extend my <a href="#2011.246.48162">identity
+  system</a> with detached signatures, since this allows us to feed the
+  identity files directly into a Lisp interpreter.
+</p>
+<p>
+  <ul>
+    <li><b>signatures</b>: Each value is a URL, as a string, at which the
+      signature of the latest version of the identity file can be fetched.
+  </ul>
+</p>
+<p>
+  Additionally, I propose that Lisp comments (i.e., lines beginning with
+  ';') be allowed outside the person form to explain nonstandard URL schemas
+  and other oddities.
+</p>

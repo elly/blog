@@ -1,0 +1,80 @@
+An identity system
+<p>
+  A while ago I linked back to my website on <a href="http://subjot.com">subjot</a>,
+  and a friend pointed out that there was no way to verify that that linkage was
+  real from the other direction (i.e., to verify that my subjot was me).
+  Therefore, I made up <a href="http://www.leptoquark.net/~elly/identities">a
+  structured way</a> to express which relationships I have.
+</p>
+
+<p>
+  The syntax is a <a href="http://people.cs.aau.dk/~normark/scheme/r4rs/r4rs_5.htm#SEC22">
+  datum</a>, written in the Scheme external representation. The structure is a
+  list whose first element is the symbol 'person'; all the remaining elements are
+  lists whose heads are symbols and whose tails are values (dependent on the head
+  symbol for that list). In essence: (person (key values ...) (key values ...)
+  ...). The symbols I have defined (and their values) are:
+</p>
+
+<p>
+  <ul>
+    <li><b>version</b>: A single value, an integer. Higher values are
+      newer.</li>
+    <li><b>roots</b>: Each value is a URL, as a string, at which the latest
+      version of the identity file can be fetched.</li>
+    <li><b>names</b>: Preferred short names for this person.</li>
+    <li><b>emails</b>: Each value is a list of strings of length 2, which
+      can be concatenated (separated with an "@") to form a valid email
+      address for this person.</li>
+    <li><b>urls</b>: Other locations at which this person can be found.</li>
+    <li><b>pgp-keys</b>: Each value is a list of length at least two; only
+      the first two elements have any significance, but others may be added
+      as comments or metadata. The first element of each value is a tag,
+      indicating the purpose of this key; the second element is a
+      fingerprint of this key.</li>
+    <li><b>tags</b>: Each value is a symbol, which is a tag this person
+      wishes to apply to themselves. Tags are arbitrary.</li>
+  </ul>
+</p>
+
+<p>
+  I sign the file with 'gpg --clearsign --armor -u $ROOTKEYID identities',
+  then put up the resulting identities.asc file.
+</p>
+
+<p>
+  All it would take to turn this into a genuine social network (as in, one
+  with explicitly, publicly-visible linkages between friends) would be an
+  additional key in the person structure, used to link to another person:
+</p>
+
+<p>
+  <ul>
+    <li><b>link</b>: Each value is a list of key-value pairs; defined keys
+      include at least <b>name</b>, <b>roots</b>, and <b>pgp-keys</b>. The
+      <b>name</b> key is local only (e.g., may be a local pet name for the
+      identified person).
+  </ul>
+</p>
+
+<p>
+  I really like the idea of identifying people first and foremost by some
+  unforgeable identifier like public keys. If there were a way to attach
+  arbitrary metadata to PGP keys (perhaps in the comment field?), you could
+  build a social network on this principle that would be decentralized and
+  secure. You'd just put your public key up on the keyservers with the
+  comment field pointing at some stable URL; at that stable URL, you could
+  have one of these files, which would in turn link to a bunch of other
+  backup URLs. Since you signed the whole thing, your identity file could
+  easily be replicated by other people, and the whole thing needs only be
+  served over dumb HTTP (i.e., no server-side work needed at all).
+</p>
+
+<p>
+  As an aside, I've created a separate blog key
+  (<a href="http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x8DB93AB8A330A1E6">
+  5D11F5C48E4FC49D91AADE988DB93AB8A330A1E6</a>, signed by my root key) with
+  which I will begin signing the HTML source of this blog. The signature
+  will always be available at <a href="http://www.leptoquark.net/~elly/blog/sig">
+  http://www.leptoquark.net/~elly/blog/sig</a>.
+</p>

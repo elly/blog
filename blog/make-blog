@@ -1,0 +1,51 @@
+#!/bin/bash
+
+path2id () {
+	yd=${1#entries/}
+	yd=${yd//\//.}
+	echo "$yd"
+}
+
+path2title () {
+	head -1 "$1"
+}
+
+lsdirs () {
+	ls -rd entries/*/*
+}
+
+lsents () {
+	ls -rd entries/*/*/*
+}
+
+genindex () {
+	for dir in $(lsdirs); do
+		yd=$(path2id "$dir")
+		echo "      <li class=\"ni\"><b>$yd</b>:"
+		for ent in $dir/*; do
+			id=$(path2id "$ent")
+			last=$(echo "$id" | sed 's/.*\.//g')
+			echo "        <a href=\"#$id\">$last</a>"
+		done
+		echo "      </li>"
+	done
+}
+
+genentries () {
+	for ent in $(lsents); do
+		id=$(path2id "$ent")
+		echo -n "    <h1 id=\"$id\" class=\"post\">"
+		echo -n "<a href=\"#$id\">$id</a>: "
+		echo -n $(path2title "$ent")
+		echo "</h1>"
+		tail -n +2 "$ent" | sed 's/^/      /'
+	done
+}
+
+cat head.html
+echo '    <h1 id="index">Index</h1>'
+echo '      <ul>'
+genindex
+echo '      </ul>'
+genentries
+cat tail.html

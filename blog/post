@@ -1,0 +1,9 @@
+#!/bin/sh
+
+./make-blog > blog.html
+rm -f blog.html.asc
+gpg --detach-sign --armor -u A330A1E6 blog.html
+./make-rss < blog.html > blog.rss
+scp blog.html rath:~/www/blog/index.html
+scp blog.html.asc rath:~/www/blog/sig
+scp blog.rss rath:~/www/blog/rss.xml

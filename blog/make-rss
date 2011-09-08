@@ -1,0 +1,25 @@
+#!/bin/sh
+
+linkroot="http://www.leptoquark.net/~elly/blog"
+
+cat <<HDR
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>elly's blog</title>
+  <description>RSS feed for elly's blog</description>
+  <link>$linkroot</link>
+HDR
+grep 'class="post"' | head -10 | while read p; do
+	id=$(echo "$p" | sed 's/.*#\([0-9.]*\).*/\1/')
+	title=$(echo "$p" | sed 's/.*: \(.*\)<\/h1>/\1/')
+	echo "    <item>"
+	echo "      <title>$id: $title</title>"
+	echo "      <link>$linkroot/#$id</link>"
+        echo "      <guid>$id</guid>"
+        echo "    </item>"
+done
+cat <<FTR
+</channel>
+</rss>
+FTR
