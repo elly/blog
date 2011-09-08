@@ -1,0 +1,22 @@
+p,h1,li {
+  font-family: monospace;
+  font-size: 100%;
+  font-weight: normal;
+}
+h1 {
+  width: 80ex;
+}
+p {
+  margin-left: 8ex;
+  width: 72ex;
+}
+
+li {
+  width: 64ex;
+  margin-left: 8ex;
+}
+
+li.ni {
+  margin-left: 0ex;
+  width: 72ex;
+}
