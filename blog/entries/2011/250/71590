@@ -1,0 +1,37 @@
+Now with more github :)
+<p>
+  I've put my blog engine (and blog contents!)
+  <a href="https://github.com/elly/blog">up on github</a>.
+</p>
+
+<p>
+  I had one of those days today where I feel like I'm sort of level-grinding; I
+  didn't really get anything *done*, but I gained a lot of expertise that I
+  didn't have before, and I think I leveled up (so to speak, anyway) in
+  understanding the automatic integration and testing infrastructure we use.
+</p>
+
+<p>
+  I'm about 3/4 of the way through <a href="http://books.google.com/books?id=SxttzgAACAAJ">
+  Magic Knight Rayearth</a> now, and I think it's taken a considerable turn
+  upwards since I last wrote about it, although the end of the battle with Ascot
+  felt kind of like being hit in the face with friendship (!) and I don't have
+  much hope for the next big bad, who seems to be a combination of stripper and
+  volleyball player (?). Next on my list is definitely
+  <a href="http://books.google.com/books?id=zz_ippxyHE4C">The Little Black Book
+  of Style</a>.
+</p>
+
+<p>
+  What if one could automatically detect insecure tempfile use using ptrace(),
+  e.g. by faking out the results of any open() after a readdir() as though the
+  file had been created in the mean time with some insecure mode?
+</p>
+
+<p>
+  I think it is really cute that Misty doesn't look humans in the eye if she can
+  possibly avoid it. Liz and I think this is a wolf-like-dog kind of dominance
+  thing, because other dogs I've had that weren't so wolf-like didn't do that
+  (and in fact, dogs I've had that were sheep/cattle-herding dogs would stare
+  humans in the eyes as a matter of habit).
+</p>
