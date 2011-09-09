@@ -1,0 +1,3 @@
+This is the git repo for my blog (all of my website, really, but the blog is the
+only interesting bit :-P). There's a script in /blog/post that generates the
+blog HTML file from the entries, signs it, and pushes it.
