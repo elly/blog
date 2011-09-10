@@ -1,0 +1,47 @@
+Magic Knight Rayearth
+<p>
+  I finished <a href="http://books.google.com/books?id=SxttzgAACAAJ">Magic
+  Knight Rayearth</a> today. The ending was Power Of Friendship all the way, but
+  for all that, I found it quite sweet and charming, and I'd recommend it,
+  especially to people who are otherwise new to manga.
+</p>
+
+<p>
+  Lemma: <a href="http://en.wikipedia.org/wiki/Brigitte_Bardot">Brigitte
+  Bardot</a> was a smoking hottie back in the day.
+</p>
+
+<p>
+  I started reading <a href="http://books.google.com/books?id=zz_ippxyHE4C">The
+  Little Black Book of Style</a>. It's pretty fascinating, really, and confirms
+  a lot of my personal prejudices about beauty :). Choice quote: "I was not
+  ugly. I might never be anything for men to lose their heads about, but I need
+  never again be ugly. This knowledge was like a song within me. Suddenly it all
+  came together. If you were healthy, fit, and well-dressed, you could be
+  attractive." Also, "Nothing suits a woman better than this air of
+  self-assurance, and when she truly owns that, she is unyielding and stunning.
+  Confidence is the one thing that can instantly turn the volume up on a woman's
+  beauty." I'm looking forward to the rest of the book immensely.
+</p>
+
+<p>
+  Liz produced some obscenely delicious chili today out of pinto beans,
+  jalapeno and habanero chilis, and a whole bunch of miscellaneous other stuff.
+  Kinda spicy, quite sweet, and so delicious that between the two of us we ate
+  all of it.
+</p>
+
+<p>
+  What if there was a hermetic, self-contained cloud-in-a-box that one could
+  drop onto any reasonably modern machine, feed an identifier and a shared
+  secret, and have it bootstrap itself into a replicated, high-availability
+  cloud across all your machines?
+
+  What I'm thinking is: when one of these nodes comes up, it connects to some
+  centralized (yes, ugh) broker service, gets a list of the other services with
+  the same identifier it has, and authenticates mutually to them with its shared
+  secret; it then starts to replicate data and load-balance, seeking some
+  minimum replication factor and using the high-availability service as a
+  front-end load balancer. You could kick the broker service out into a DHT if
+  you felt so inclined, but the frontend behavior is very useful.
+</p>
